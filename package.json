@@ -1,0 +1,23 @@
+{
+    "name": "crypto-rabbitmq",
+    "description": "encrypt / decrypt, rabbitmq exercise",
+    "version": "0.0.1",
+    "author": "Erik Mangor",
+    "dependencies": {
+        "amqplib": "^0.5.2",
+        "body-parser": "1.18.2",
+        "express": "4.16.2",
+        "winston": "2.4.0"
+    },
+    "engines": {
+        "node": "8.9.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/emangor/encrypt-decrypt.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "start": "node app.js"
+    }
+}
