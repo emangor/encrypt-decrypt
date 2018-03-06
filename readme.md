@@ -8,25 +8,41 @@
 ## available routes:
 
 ### POST - /encrypt - REST
+
 http://localhost:3000/encrypt
+
 Header: Content-Type:application/json
+
 Body:
+
 ```{"string": "NewBanking manages your identity"}```
 
 ### POST - /decrypt - REST
+
 http://localhost:3000/decrypt
+
 Header: Content-Type:application/json
+
 Body:
+
 ```{"string": "String that was returned from being encrypted"}```
 
 ### POST - /queue - JSON-RPC - method: encrypt
+
 http://localhost:3000/queue
+
 Header: Content-Type:application/json
+
 Body:
+
 ```{"jsonrpc": "2.0", "method": "encrypt", "params": "NewBanking manages your identity", "id": null}```
 
 ### POST - /queue - JSON-RPC - method: decrypt
+
 http://localhost:3000/queue
+
 Header: Content-Type:application/json
+
 Body:
+
 ```{"jsonrpc": "2.0", "method": "decrypt", "id": null}```
