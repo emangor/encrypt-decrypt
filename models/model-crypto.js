@@ -25,7 +25,7 @@ module.exports.encrypt = (stringToEncrypt) => {
     let encryptedReturn;
     let iv = crypto.randomBytes(config.randomBytes);
     let cipher = crypto.createCipheriv(algorithm, encryptionKey, iv);
-    let encryptedData = cipher.update(stringToEncrypt);
+    let encryptedData = cipher.update(stringToEncrypt,'utf8');
     encryptedFinal = Buffer.concat([encryptedData, cipher.final()]);
     encryptedReturn =  `${iv.toString('base64')}:${encryptedFinal.toString('base64')}`;
     return encryptedReturn;
@@ -40,7 +40,7 @@ module.exports.decrypt = (stringToDecrypt) => {
     let iv = new Buffer(stringSplit.shift(), 'base64');
     let encryptedText = new Buffer(stringSplit.join(':'), 'base64');
     let decipher = crypto.createDecipheriv(algorithm, encryptionKey, iv);
-    let decryptedData = decipher.update(encryptedText);
+    let decryptedData = decipher.update(encryptedText,'utf8');
     decryptedFinal = Buffer.concat([decryptedData, decipher.final()]);
     decryptedReturn = decryptedFinal.toString();
     return decryptedReturn;
